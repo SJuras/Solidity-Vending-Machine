@@ -27,7 +27,7 @@ contract VendingMachine {
     // purchase donut
     function purchase(uint256 amount) public payable {
         // set the donut price!
-        require(msg.value >= amount * 1 ether, "Not enough ether to buy a donut, price is 1 ether per donut");
+        require(msg.value >= amount * 1 gwei, "Not enough ether to buy a donut, price is 1 ether per donut");
         // check if the vending machine has enough donuts
         require(donutBalances[address(this)] >= amount, "Not enough donuts in vending machine.");
         // reduce the number of donuts in vending machine
